@@ -15,6 +15,7 @@ function App(): React.JSX.Element {
   return (
         <View>
             <Login/>
+            <Text>Lehung</Text>
         </View>
 
   );
