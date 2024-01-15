@@ -6,6 +6,7 @@ const Login=()=>{
         <View>
             <Text>AAA BBB</Text>
             <Text>AAA BBB</Text>
+            <Text>From branch 1</Text>
 
         </View>
     )
