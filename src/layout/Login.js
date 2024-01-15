@@ -7,6 +7,7 @@ const Login=()=>{
             <Text>AAA BBB</Text>
             <Text>AAA BBB</Text>
 
+
         </View>
     )
 
