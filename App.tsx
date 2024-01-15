@@ -16,6 +16,7 @@ function App(): React.JSX.Element {
         <View>
             <Login/>
             <Text>Lehung</Text>
+            <Text>Lehung2</Text>
         </View>
 
   );
