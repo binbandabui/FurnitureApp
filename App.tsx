@@ -8,12 +8,13 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import Login from './src/layout/Login';
 
 
 function App(): React.JSX.Element {
   return (
         <View>
-       
+            <Login/>
         </View>
 
   );
