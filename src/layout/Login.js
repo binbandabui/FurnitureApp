@@ -4,7 +4,7 @@ const Login=()=>{
 
     return(
         <View>
-            <Text>AAA</Text>
+            <Text>AAA BBB</Text>
         </View>
     )
 
