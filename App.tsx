@@ -18,7 +18,7 @@ function App(): React.JSX.Element {
             <Text>aaa</Text>
 
 
-            {/*Layout:Favorite <Favor /> */}
+<Favor /> 
         </View>
 
   );

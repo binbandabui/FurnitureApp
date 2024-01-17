@@ -11,7 +11,7 @@ const Favor = (props) => {
                 <View style={(styles.imgcontain)}>
                     <Image
                         style={(styles.image)}
-                        source={require('../src/img/pic.png')}></Image>
+                        source={require('./img/pic.png')}></Image>
                 </View>
                 <View style={styles.textlabel}>
                     <Text style={styles.name}>{name}</Text>
@@ -20,9 +20,9 @@ const Favor = (props) => {
 
                 <View style={styles.btnlabel}>
                     <Image style={(styles.btnDel)}
-                        source={require('../src/img/Del.png')}></Image>
+                        source={require('./img/Del.png')}></Image>
                     <Image style={(styles.Bag)}
-                        source={require('../src/img/bag.png')}></Image>
+                        source={require('./img/bag.png')}></Image>
                 </View>
 
             </View>
@@ -35,10 +35,10 @@ const Favor = (props) => {
             <View style={styles.head}>
 
                 <Image style={(styles.searI)}
-                    source={require('../src/img/search.png')}></Image>
+                    source={require('./img/Search.png')}></Image>
                 <Text style={(styles.searT)}>Favorites</Text>
                 <Image style={(styles.searC)}
-                    source={require('../src/img/Cart.png')}></Image>
+                    source={require('./img/Cart.png')}></Image>
 
             </View>
             <FlatList
@@ -58,19 +58,19 @@ const Favor = (props) => {
             <View style={styles.containertb1}>
                 <TouchableOpacity  >
                     <Image style={(styles.tbicon)}
-                        source={require('../src/img/home-tb.png')}></Image>
+                        source={require('./img/home-tb.png')}></Image>
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <Image style={(styles.tbicon)}
-                        source={require('../src/img/fav_tb.png')}></Image>
+                        source={require('./img/fav_tb.png')}></Image>
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <Image style={(styles.tbicon)}
-                        source={require('../src/img/bell_tb.png')}></Image>
+                        source={require('./img/bell_tb.png')}></Image>
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <Image style={(styles.tbicon)}
-                        source={require('../src/img/profile_tb.png')}></Image>
+                        source={require('./img/profile_tb.png')}></Image>
                 </TouchableOpacity>
             </View>
         </View>
