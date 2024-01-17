@@ -31,11 +31,10 @@ const Product = () => {
         <Image source={anhsp} style={mystyle.anhspp}></Image>
         <View style={mystyle.selectcolor}>
           <View style={mystyle.biggroup}>
-            <Image style={mystyle.grselect} source={grselect} />
-            <TouchableOpacity
-              style={[mystyle.gr]}>
+            {/* <Image style={mystyle.grselect} source={grselect} />*/}
+            <TouchableOpacity style={[mystyle.gr]}>
               <Image
-                source={gr16_1}
+                source={gr16}
                 style={{
                   resizeMode: 'contain',
                   width: '100%',
