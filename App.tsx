@@ -9,13 +9,16 @@ import {
   View,
 } from 'react-native';
 import Login from './src/layout/Login';
+import Favor from './src/Favorite';
 
 
 function App(): React.JSX.Element {
   return (
         <View>
-            <Login/>
-            <Text>Lehung</Text>
+            <Text>aaa</Text>
+
+
+            {/*Layout:Favorite <Favor /> */}
         </View>
 
   );
