@@ -11,11 +11,12 @@ import {
 import Login from './src/layout/Login';
 import Favor from './src/Favorite';
 import ManKhoiDau from './Hsang/ManKhoiDau';
+import TinTuc from './Hsang/TinTuc';
 
 
 function App(): React.JSX.Element {
   return (
-        <ManKhoiDau/>
+        <TinTuc/>
 
   );
 }
