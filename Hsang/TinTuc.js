@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold'
     },
     searchic:{
-        top:4,
+        top:5,
         left:6,
         position: 'absolute',
     }
