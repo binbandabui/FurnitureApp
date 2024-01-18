@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     },
     searchic:{
         top:4,
-        left:5,
+        left:6,
         position: 'absolute',
     }
 
