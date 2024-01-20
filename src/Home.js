@@ -36,7 +36,7 @@ const Home = () => {
   const renderspitem = ({item}) => {
     const {id, name, price, img} = item;
     return (
-      <TouchableOpacity style={mystyle.itemsp} activeOpacity={0.5}>
+      <TouchableOpacity style={mystyle.itemsp}>
         <Image source={img} style={mystyle.imgitemsp} />
         <Text style={mystyle.txtnamesp}>{name}</Text>
         <Text style={mystyle.txtpricesp}>
@@ -92,25 +92,25 @@ const Home = () => {
       <View style={mystyle.navigation}>
         <TouchableOpacity>
           <Image
-            source={require('../asset/img/imgnav/home.png')}
+            source={require('../asset/img/img2x/home.png')}
             style={mystyle.imgnav}
           />
         </TouchableOpacity>
         <TouchableOpacity>
           <Image
-            source={require('../asset/img/imgnav/fav.png')}
+            source={require('../asset/img/img2x/fav.png')}
             style={mystyle.imgnav}
           />
         </TouchableOpacity>
         <TouchableOpacity>
           <Image
-            source={require('../asset/img/imgnav/bell.png')}
+            source={require('../asset/img/img2x/bell.png')}
             style={mystyle.imgnav}
           />
         </TouchableOpacity>
         <TouchableOpacity>
           <Image
-            source={require('../asset/img/imgnav/account.png')}
+            source={require('../asset/img/img2x/account.png')}
             style={mystyle.imgnav}
           />
         </TouchableOpacity>
