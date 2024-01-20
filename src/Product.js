@@ -7,9 +7,13 @@ import {
   ScrollView,
 } from 'react-native';
 import React, {useState} from 'react';
-const Product = () => {
+const Product = props => {
+  const {navigation} = props;
+  const gotoback = () => {
+    navigation.navigate('Home');
+  };
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1,backgroundColor:'white'}}>
       {/*head */}
       <View style={mystyle.head}>
         <Image
@@ -34,7 +38,7 @@ const Product = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity style={mystyle.back}>
+        <TouchableOpacity style={mystyle.back} onPress={gotoback}>
           <Image
             source={require('../asset/img/Frame_14.png')}
             style={mystyle.farmeimg}></Image>
@@ -201,7 +205,7 @@ const mystyle = StyleSheet.create({
   giasl: {
     display: 'flex',
     flexDirection: 'row',
-    flexShrink:1,
+    flexShrink: 1,
     height: 60,
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -211,7 +215,7 @@ const mystyle = StyleSheet.create({
     fontSize: 40,
     fontStyle: 'normal',
     fontWeight: '700',
-    marginLeft:20,
+    marginLeft: 20,
     fontFamily: 'NunitoSans_7pt_Condensed-Medium',
   },
   sl: {
@@ -289,7 +293,7 @@ const mystyle = StyleSheet.create({
   addfav: {
     width: 60,
     height: 60,
-    alignItems:'center'
+    alignItems: 'center',
   },
   addcard: {
     display: 'flex',

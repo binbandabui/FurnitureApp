@@ -8,7 +8,11 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 
-const Home = () => {
+const Home = (props) => {
+  const {navigation}=props;
+  const gotoproduct=()=>{
+    navigation.navigate('Product');
+  }
   const [itemslot, itemSlot] = useState(iconmenu);
   const [spitem, spItem] = useState(sp);
   const [selectedindex, setselectedIndex] = useState(1);
@@ -36,7 +40,7 @@ const Home = () => {
   const renderspitem = ({item}) => {
     const {id, name, price, img} = item;
     return (
-      <TouchableOpacity style={mystyle.itemsp}>
+      <TouchableOpacity style={mystyle.itemsp} onPress={gotoproduct}>
         <Image source={img} style={mystyle.imgitemsp} />
         <Text style={mystyle.txtnamesp}>{name}</Text>
         <Text style={mystyle.txtpricesp}>
@@ -51,7 +55,7 @@ const Home = () => {
     );
   };
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1,backgroundColor:'white'}}>
       <View style={mystyle.head}>
         <TouchableOpacity>
           <Image
