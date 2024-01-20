@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "asset/fonts/Gelasio-Medium.ttf",
+      "sha1": "b6e3f60762812e72117a4027a31ba12645dbb0a9"
+    },
+    {
+      "path": "asset/fonts/NunitoSans_10pt_SemiCondensed-Medium.ttf",
+      "sha1": "f84e80b98c256ebfa60ce39b575319f17fe349f0"
+    }
+  ]
+}
