@@ -67,7 +67,9 @@ const Product = () => {
         </View>
         <ScrollView style={{height: '17%'}}>
           <View style={mystyle.star}>
-            <Image source={star} style={mystyle.imgstar}></Image>
+            <Image
+              source={star}
+              style={mystyle.imgstar}></Image>
             <Text style={mystyle.txtstar}>4.5</Text>
             <Text style={mystyle.txtstar2}>(50 reviews)</Text>
           </View>
@@ -82,7 +84,7 @@ const Product = () => {
       {/*add */}
       <View style={mystyle.add}>
         <TouchableOpacity style={mystyle.addfav}>
-          <Image source={fav} style={{flex:1,resizeMode:'contain'}} />
+          <Image source={fav} style={{width: '100%', height: '100%'}} />
         </TouchableOpacity>
         <TouchableOpacity style={mystyle.addcard}>
           <Text style={mystyle.txtaddcard}>Add to cart</Text>
@@ -115,7 +117,7 @@ const mystyle = StyleSheet.create({
     height: '50%',
   },
   anhspp: {
-    width: '87%',
+    width: "87%",
     height: 455,
     alignSelf: 'flex-end',
     borderRadius: 0,
@@ -127,11 +129,14 @@ const mystyle = StyleSheet.create({
     zIndex: 1,
     minWidth: '50%',
     height: '2%',
+
     alignSelf: 'flex-end',
     top: '92%',
   },
   slot2: {
-    flex: 1,
+    width: '100%',
+    height: '100%',
+    display: 'flex',
     flexDirection: 'row',
   },
   itemslot: {
@@ -171,9 +176,9 @@ const mystyle = StyleSheet.create({
     marginBottom: 32,
   },
   imggr: {
-    flex: 1,
-    resizeMode: 'contain',
-    alignSelf: 'center',
+    flex:1,
+    resizeMode:'contain',
+    alignSelf:'center'
   },
   grselect: {
     position: 'absolute',
@@ -183,19 +188,30 @@ const mystyle = StyleSheet.create({
     marginLeft: '50%',
     resizeMode: 'contain',
   },
+  grselect2: {
+    position: 'absolute',
+    zIndex: 1,
+    width: '43%',
+    height: '20%',
+    margin: '5%',
+    marginTop: '13%',
+    alignSelf: 'center',
+    resizeMode: 'contain',
+    transform: [{translateY: 30}],
+  },
   namesp: {
     color: '#303030',
     fontSize: 24,
     fontStyle: 'normal',
     fontWeight: '500',
-    marginLeft: 20,
-    marginTop: 25,
+    marginLeft: '5%',
+    marginTop: '5%',
     fontFamily: 'Gelasio-Medium',
   },
   giasl: {
     display: 'flex',
     flexDirection: 'row',
-    flexShrink:1,
+    width: '100%',
     height: 60,
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -205,7 +221,7 @@ const mystyle = StyleSheet.create({
     fontSize: 40,
     fontStyle: 'normal',
     fontWeight: '700',
-    marginLeft:20,
+    marginLeft: '5%',
     fontFamily: 'NunitoSans_7pt_Condensed-Medium',
   },
   sl: {
@@ -213,8 +229,8 @@ const mystyle = StyleSheet.create({
     flexDirection: 'row',
     width: '40%',
     height: '70%',
-    marginRight: 10,
-    alignItems: 'center',
+    marginRight:10,
+    alignItems:'center',
     justifyContent: 'space-between',
   },
   buttonsl: {
@@ -238,10 +254,10 @@ const mystyle = StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
   },
-  imgstar: {
-    width: 20,
-    height: 20,
-    marginLeft: 25,
+  imgstar:{
+    width:20,
+    height:20,
+    marginLeft:25
   },
   txtstar: {
     color: '#303030',
@@ -273,9 +289,9 @@ const mystyle = StyleSheet.create({
   add: {
     width: '90%',
     height: '10%',
-    marginLeft: 25,
-    marginRight: 25,
-    marginTop: 20,
+    marginLeft:25,
+    marginRight:25,
+    marginTop:20,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -283,7 +299,6 @@ const mystyle = StyleSheet.create({
   addfav: {
     width: 60,
     height: 60,
-    alignItems:'center'
   },
   addcard: {
     display: 'flex',
