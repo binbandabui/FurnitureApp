@@ -7,15 +7,6 @@ import {
   ScrollView,
 } from 'react-native';
 import React, {useState} from 'react';
-const farme = require('../asset/img/Frame_14.png');
-const anhsp = require('../asset/img/2681826.png');
-const gr16 = require('../asset/img/Group_16.png');
-const gr17 = require('../asset/img/Group_17.png');
-const gr18 = require('../asset/img/Group_18.png');
-const gr15 = require('../asset/img/Group_15.png');
-const gr23 = require('../asset/img/Group_23.png');
-const star = require('../asset/img/star_1.png');
-const fav = require('../asset/img/Frame_61.png');
 const Product = () => {
   return (
     <View style={{flex: 1}}>
