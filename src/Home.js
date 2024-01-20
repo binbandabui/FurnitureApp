@@ -89,32 +89,7 @@ const Home = () => {
           style={mystyle.sp}
         />
       </View>
-      <View style={mystyle.navigation}>
-        <TouchableOpacity>
-          <Image
-            source={require('../asset/img/imgnav/home.png')}
-            style={mystyle.imgnav}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            source={require('../asset/img/imgnav/fav.png')}
-            style={mystyle.imgnav}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            source={require('../asset/img/imgnav/bell.png')}
-            style={mystyle.imgnav}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            source={require('../asset/img/imgnav/account.png')}
-            style={mystyle.imgnav}
-          />
-        </TouchableOpacity>
-      </View>
+
     </View>
   );
 };
