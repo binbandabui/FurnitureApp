@@ -19,8 +19,7 @@ function App(): React.JSX.Element {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <StatusBar translucent backgroundColor={'rgba(0,0,0,0)'} />
-      <ManKhoiDau />
-      <Text>Aaas</Text>
+      <Main />
     </SafeAreaView>
   );
 }
