@@ -8,18 +8,17 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import Login from './src/layout/Login';
 import Favor from './src/Favorite';
 import Product from './src/Product';
+import Home from './src/Home';
 
 function App(): React.JSX.Element {
   return (
-        <View>
-          <Product/>
-        </View>
-
+    <SafeAreaView style={{flex: 1}}>
+      <StatusBar translucent backgroundColor={'rgba(0,0,0,0)'} />
+      <Home />
+    </SafeAreaView>
   );
 }
-
 
 export default App;

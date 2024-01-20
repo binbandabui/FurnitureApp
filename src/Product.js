@@ -16,48 +16,22 @@ const gr15 = require('../asset/img/Group_15.png');
 const gr23 = require('../asset/img/Group_23.png');
 const star = require('../asset/img/star_1.png');
 const fav = require('../asset/img/Frame_61.png');
-const gr16_1 = require('../asset/img/Group_16_1.png');
-const grselect = require('../asset/img/Group_select.png');
 const Product = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const handleSlotPress = index => {
-    setSelectedIndex(index);
-  };
   return (
-    <View style={{width: '100%', height: '100%'}}>
+    <View style={{flex: 1}}>
       {/*head */}
       <View style={mystyle.head}>
         <Image source={anhsp} style={mystyle.anhspp}></Image>
         <View style={mystyle.selectcolor}>
           <View style={mystyle.biggroup}>
-            {/* <Image style={mystyle.grselect} source={grselect} />*/}
             <TouchableOpacity style={[mystyle.gr]}>
-              <Image
-                source={gr16}
-                style={{
-                  resizeMode: 'contain',
-                  width: '100%',
-                  height: '100%',
-                }}></Image>
+              <Image source={gr16} style={mystyle.imggr}></Image>
             </TouchableOpacity>
             <TouchableOpacity style={mystyle.gr}>
-              <Image
-                source={gr17}
-                style={{
-                  resizeMode: 'contain',
-                  width: '100%',
-                  height: '100%',
-                }}></Image>
+              <Image source={gr17} style={mystyle.imggr}></Image>
             </TouchableOpacity>
             <TouchableOpacity style={mystyle.gr}>
-              <Image
-                source={gr18}
-                style={{
-                  resizeMode: 'contain',
-                  width: '100%',
-                  height: '100%',
-                }}></Image>
+              <Image source={gr18} style={mystyle.imggr}></Image>
             </TouchableOpacity>
           </View>
         </View>
@@ -66,16 +40,9 @@ const Product = () => {
         </TouchableOpacity>
         <View style={mystyle.slot}>
           <View style={mystyle.slot2}>
-            {[...Array(3).keys()].map(index => (
-              <TouchableOpacity
-                key={index}
-                style={
-                  selectedIndex === index
-                    ? mystyle.itemslotselect
-                    : mystyle.itemslot
-                }
-                onPress={() => handleSlotPress(index)}></TouchableOpacity>
-            ))}
+            <TouchableOpacity style={mystyle.itemslotselect}></TouchableOpacity>
+            <TouchableOpacity style={mystyle.itemslot}></TouchableOpacity>
+            <TouchableOpacity style={mystyle.itemslot}></TouchableOpacity>
           </View>
         </View>
       </View>
@@ -83,35 +50,27 @@ const Product = () => {
       <View>
         <Text style={mystyle.namesp}>Minimal Stand</Text>
         <View style={mystyle.giasl}>
-          <Text style={mystyle.gia}>$50</Text>
+          <Text style={mystyle.gia}>$ 50</Text>
           <View style={mystyle.sl}>
             <TouchableOpacity style={mystyle.buttonsl}>
               <Image
                 source={gr15}
-                style={{width: '100%', height: '100%'}}></Image>
+                style={{flex: 1, resizeMode: 'contain'}}></Image>
             </TouchableOpacity>
-            <Text style={[mystyle.txtsl]}> 01</Text>
+            <Text style={[mystyle.txtsl]}>01</Text>
             <TouchableOpacity style={mystyle.buttonsl}>
               <Image
                 source={gr23}
-                style={{width: '100%', height: '100%'}}></Image>
+                style={{flex: 1, resizeMode: 'contain'}}></Image>
             </TouchableOpacity>
           </View>
         </View>
         <ScrollView style={{height: '17%'}}>
           <View style={mystyle.star}>
-            <Image
-              source={star}
-              style={{
-                width: '10%',
-                height: '90%',
-                marginLeft: '5%',
-                resizeMode: 'contain',
-              }}></Image>
+            <Image source={star} style={mystyle.imgstar}></Image>
             <Text style={mystyle.txtstar}>4.5</Text>
             <Text style={mystyle.txtstar2}>(50 reviews)</Text>
           </View>
-
           <Text style={mystyle.txtcontent}>
             Minimal Stand is made of by natural wood. The design that is very
             simple and minimal. This is truly one of the best furnitures in any
@@ -120,10 +79,10 @@ const Product = () => {
           </Text>
         </ScrollView>
       </View>
-      {/*ađ */}
+      {/*add */}
       <View style={mystyle.add}>
         <TouchableOpacity style={mystyle.addfav}>
-          <Image source={fav} style={{width: '100%', height: '100%'}} />
+          <Image source={fav} style={{flex:1,resizeMode:'contain'}} />
         </TouchableOpacity>
         <TouchableOpacity style={mystyle.addcard}>
           <Text style={mystyle.txtaddcard}>Add to cart</Text>
@@ -136,14 +95,14 @@ const Product = () => {
 export default Product;
 const mystyle = StyleSheet.create({
   head: {
-    with: '100%',
+    flexShrink: 1,
     height: '55%',
   },
   back: {
-    width: '6%',
-    height: '3%',
-    marginLeft: '8%',
-    marginTop: '10%',
+    width: 40,
+    height: 40,
+    marginLeft: 32,
+    marginTop: 53,
     backgroundColor: 'white',
     borderRadius: 6,
     justifyContent: 'center',
@@ -156,8 +115,8 @@ const mystyle = StyleSheet.create({
     height: '50%',
   },
   anhspp: {
-    width: '85%',
-    height: '100%',
+    width: '87%',
+    height: 455,
     alignSelf: 'flex-end',
     borderRadius: 0,
     borderBottomLeftRadius: 50,
@@ -168,18 +127,15 @@ const mystyle = StyleSheet.create({
     zIndex: 1,
     minWidth: '50%',
     height: '2%',
-
     alignSelf: 'flex-end',
     top: '92%',
   },
   slot2: {
-    width: '100%',
-    height: '100%',
-    display: 'flex',
+    flex: 1,
     flexDirection: 'row',
   },
   itemslot: {
-    width: 40,
+    width: 30,
     height: 6,
     backgroundColor: 'white',
     borderRadius: 4,
@@ -196,64 +152,50 @@ const mystyle = StyleSheet.create({
   },
   selectcolor: {
     backgroundColor: 'white',
-    width: '14%',
-    height: '55%',
-    marginLeft: '6%',
+    width: 64,
+    height: 192,
+    marginLeft: 22,
     position: 'absolute',
-    zIndex: 2,
+    zIndex: 1,
     borderRadius: 40,
-    top: '25%',
+    marginTop: 149,
   },
   biggroup: {
-    width: '100%',
-    height: '80%',
-    marginBottom: 'auto',
-    marginTop: 'auto',
-    alignSelf: 'center',
+    width: 34,
+    height: 162,
+    margin: 15,
   },
   gr: {
-    width: '55%',
-    height: '20%',
-    margin: '5%',
-    marginTop: 'auto',
-    marginBottom: 'auto',
-    alignSelf: 'center',
+    width: 32,
+    height: 32,
+    marginBottom: 32,
+  },
+  imggr: {
+    flex: 1,
     resizeMode: 'contain',
+    alignSelf: 'center',
   },
   grselect: {
     position: 'absolute',
     zIndex: 1,
-    width: '43%',
-    height: '20%',
+    flex: 1,
     margin: '5%',
-    marginTop: '13%',
-    alignSelf: 'center',
+    marginLeft: '50%',
     resizeMode: 'contain',
-  },
-  grselect2: {
-    position: 'absolute',
-    zIndex: 1,
-    width: '43%',
-    height: '20%',
-    margin: '5%',
-    marginTop: '13%',
-    alignSelf: 'center',
-    resizeMode: 'contain',
-    transform: [{translateY: 30}],
   },
   namesp: {
     color: '#303030',
     fontSize: 24,
     fontStyle: 'normal',
     fontWeight: '500',
-    marginLeft: '5%',
-    marginTop: '5%',
+    marginLeft: 20,
+    marginTop: 25,
     fontFamily: 'Gelasio-Medium',
   },
   giasl: {
     display: 'flex',
     flexDirection: 'row',
-    width: '100%',
+    flexShrink:1,
     height: 60,
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -263,7 +205,7 @@ const mystyle = StyleSheet.create({
     fontSize: 40,
     fontStyle: 'normal',
     fontWeight: '700',
-    marginLeft: '5%',
+    marginLeft:20,
     fontFamily: 'NunitoSans_7pt_Condensed-Medium',
   },
   sl: {
@@ -271,30 +213,35 @@ const mystyle = StyleSheet.create({
     flexDirection: 'row',
     width: '40%',
     height: '70%',
-    marginRight: '5%',
-    justifyContent: 'flex-end',
+    marginRight: 10,
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   buttonsl: {
     width: '25%',
-    height: '100%',
+    flexGrow: 1,
   },
   txtsl: {
     fontSize: 30,
     fontStyle: 'normal',
     fontWeight: '600',
     letterSpacing: 0.9,
-    paddingRight: 20,
-    paddingLeft: 15,
+    alignItems: 'center',
     color: '#242424',
     fontFamily: 'NunitoSans_7pt_Condensed-Medium',
   },
   star: {
     display: 'flex',
     flexDirection: 'row',
-    width: '100%',
+    flex: 1,
     height: 30,
-    alignItems: 'flex-end',
+    alignItems: 'center',
     marginTop: 10,
+  },
+  imgstar: {
+    width: 20,
+    height: 20,
+    marginLeft: 25,
   },
   txtstar: {
     color: '#303030',
@@ -315,7 +262,7 @@ const mystyle = StyleSheet.create({
     minHeight: '10%',
     marginLeft: '5%',
     marginRight: '5%',
-    marginTop: 14,
+    marginTop: 11,
     fontSize: 15,
     fontStyle: 'normal',
     fontWeight: '300',
@@ -326,7 +273,9 @@ const mystyle = StyleSheet.create({
   add: {
     width: '90%',
     height: '10%',
-    margin: 20,
+    marginLeft: 25,
+    marginRight: 25,
+    marginTop: 20,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -334,6 +283,7 @@ const mystyle = StyleSheet.create({
   addfav: {
     width: 60,
     height: 60,
+    alignItems:'center'
   },
   addcard: {
     display: 'flex',
