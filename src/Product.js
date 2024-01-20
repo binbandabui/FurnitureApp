@@ -7,36 +7,37 @@ import {
   ScrollView,
 } from 'react-native';
 import React, {useState} from 'react';
-const farme = require('../asset/img/Frame_14.png');
-const anhsp = require('../asset/img/2681826.png');
-const gr16 = require('../asset/img/Group_16.png');
-const gr17 = require('../asset/img/Group_17.png');
-const gr18 = require('../asset/img/Group_18.png');
-const gr15 = require('../asset/img/Group_15.png');
-const gr23 = require('../asset/img/Group_23.png');
-const star = require('../asset/img/star_1.png');
-const fav = require('../asset/img/Frame_61.png');
 const Product = () => {
   return (
     <View style={{flex: 1}}>
       {/*head */}
       <View style={mystyle.head}>
-        <Image source={anhsp} style={mystyle.anhspp}></Image>
+        <Image
+          source={require('../asset/img/2681826.png')}
+          style={mystyle.anhspp}></Image>
         <View style={mystyle.selectcolor}>
           <View style={mystyle.biggroup}>
             <TouchableOpacity style={[mystyle.gr]}>
-              <Image source={gr16} style={mystyle.imggr}></Image>
+              <Image
+                source={require('../asset/img/Group_16.png')}
+                style={mystyle.imggr}></Image>
             </TouchableOpacity>
             <TouchableOpacity style={mystyle.gr}>
-              <Image source={gr17} style={mystyle.imggr}></Image>
+              <Image
+                source={require('../asset/img/Group_17.png')}
+                style={mystyle.imggr}></Image>
             </TouchableOpacity>
             <TouchableOpacity style={mystyle.gr}>
-              <Image source={gr18} style={mystyle.imggr}></Image>
+              <Image
+                source={require('../asset/img/Group_18.png')}
+                style={mystyle.imggr}></Image>
             </TouchableOpacity>
           </View>
         </View>
         <TouchableOpacity style={mystyle.back}>
-          <Image source={farme} style={mystyle.farmeimg}></Image>
+          <Image
+            source={require('../asset/img/Frame_14.png')}
+            style={mystyle.farmeimg}></Image>
         </TouchableOpacity>
         <View style={mystyle.slot}>
           <View style={mystyle.slot2}>
@@ -54,20 +55,22 @@ const Product = () => {
           <View style={mystyle.sl}>
             <TouchableOpacity style={mystyle.buttonsl}>
               <Image
-                source={gr15}
+                source={require('../asset/img/Group_15.png')}
                 style={{flex: 1, resizeMode: 'contain'}}></Image>
             </TouchableOpacity>
             <Text style={[mystyle.txtsl]}>01</Text>
             <TouchableOpacity style={mystyle.buttonsl}>
               <Image
-                source={gr23}
+                source={require('../asset/img/Group_23.png')}
                 style={{flex: 1, resizeMode: 'contain'}}></Image>
             </TouchableOpacity>
           </View>
         </View>
         <ScrollView style={{height: '17%'}}>
           <View style={mystyle.star}>
-            <Image source={star} style={mystyle.imgstar}></Image>
+            <Image
+              source={require('../asset/img/star_1.png')}
+              style={mystyle.imgstar}></Image>
             <Text style={mystyle.txtstar}>4.5</Text>
             <Text style={mystyle.txtstar2}>(50 reviews)</Text>
           </View>
@@ -82,7 +85,10 @@ const Product = () => {
       {/*add */}
       <View style={mystyle.add}>
         <TouchableOpacity style={mystyle.addfav}>
-          <Image source={fav} style={{flex:1,resizeMode:'contain'}} />
+          <Image
+            source={require('../asset/img/Frame_61.png')}
+            style={{flex: 1, resizeMode: 'contain'}}
+          />
         </TouchableOpacity>
         <TouchableOpacity style={mystyle.addcard}>
           <Text style={mystyle.txtaddcard}>Add to cart</Text>
