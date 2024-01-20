@@ -7,6 +7,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from './Home';
 import Favor from './Favorite';
 import Product from './Product';
+import TinTuc from './TinTuc';
 const Main = props => {
   const Stack = createNativeStackNavigator();
   return (
@@ -24,7 +25,7 @@ const HomeTabs = () => {
     <Tab.Navigator screenOptions={tabScreenOptions}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Favor" component={Favor} />
-      <Tab.Screen name="Noti" component={Home} />
+      <Tab.Screen name="Noti" component={TinTuc} />
       <Tab.Screen name="Acc" component={Home} />
     </Tab.Navigator>
   );
