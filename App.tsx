@@ -1,25 +1,27 @@
 import React from 'react';
 import {
   SafeAreaView,
-  ScrollView,
+  Image,
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
+  TouchableOpacity,
   View,
 } from 'react-native';
-import Login from './src/layout/Login';
 import Favor from './src/Favorite';
-import ManKhoiDau from './Hsang/ManKhoiDau';
-import TinTuc from './Hsang/TinTuc';
-
+import Product from './src/Product';
+import Home from './src/Home';
+import Main from './src/Main';
+import TinTuc from './src/TinTuc';
+import ManKhoiDau from './src/ManKhoiDau';
 
 function App(): React.JSX.Element {
   return (
-        <TinTuc/>
-
+    <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar translucent backgroundColor={'rgba(0,0,0,0)'} />
+      <ManKhoiDau />
+    </SafeAreaView>
   );
 }
-
 
 export default App;
