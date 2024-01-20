@@ -7,36 +7,38 @@ import {
   ScrollView,
 } from 'react-native';
 import React, {useState} from 'react';
-const farme = require('../asset/img/Frame_14.png');
-const anhsp = require('../asset/img/2681826.png');
-const gr16 = require('../asset/img/Group_16.png');
-const gr17 = require('../asset/img/Group_17.png');
-const gr18 = require('../asset/img/Group_18.png');
-const gr15 = require('../asset/img/Group_15.png');
-const gr23 = require('../asset/img/Group_23.png');
-const star = require('../asset/img/star_1.png');
-const fav = require('../asset/img/Frame_61.png');
+
 const Product = () => {
   return (
     <View style={{flex: 1}}>
       {/*head */}
       <View style={mystyle.head}>
-        <Image source={anhsp} style={mystyle.anhspp}></Image>
+        <Image
+          source={require('../asset/img/2681826.png')}
+          style={mystyle.anhspp}></Image>
         <View style={mystyle.selectcolor}>
           <View style={mystyle.biggroup}>
             <TouchableOpacity style={[mystyle.gr]}>
-              <Image source={gr16} style={mystyle.imggr}></Image>
+              <Image
+                source={require('../asset/img/Group_16.png')}
+                style={mystyle.imggr}></Image>
             </TouchableOpacity>
             <TouchableOpacity style={mystyle.gr}>
-              <Image source={gr17} style={mystyle.imggr}></Image>
+              <Image
+                source={require('../asset/img/Group_17.png')}
+                style={mystyle.imggr}></Image>
             </TouchableOpacity>
             <TouchableOpacity style={mystyle.gr}>
-              <Image source={gr18} style={mystyle.imggr}></Image>
+              <Image
+                source={require('../asset/img/Group_18.png')}
+                style={mystyle.imggr}></Image>
             </TouchableOpacity>
           </View>
         </View>
         <TouchableOpacity style={mystyle.back}>
-          <Image source={farme} style={mystyle.farmeimg}></Image>
+          <Image
+            source={require('../asset/img/Frame_14.png')}
+            style={mystyle.farmeimg}></Image>
         </TouchableOpacity>
         <View style={mystyle.slot}>
           <View style={mystyle.slot2}>
@@ -54,13 +56,13 @@ const Product = () => {
           <View style={mystyle.sl}>
             <TouchableOpacity style={mystyle.buttonsl}>
               <Image
-                source={gr15}
+                source={require('../asset/img/Group_15.png')}
                 style={{flex: 1, resizeMode: 'contain'}}></Image>
             </TouchableOpacity>
             <Text style={[mystyle.txtsl]}>01</Text>
             <TouchableOpacity style={mystyle.buttonsl}>
               <Image
-                source={gr23}
+                source={require('../asset/img/Group_23.png')}
                 style={{flex: 1, resizeMode: 'contain'}}></Image>
             </TouchableOpacity>
           </View>
@@ -68,7 +70,7 @@ const Product = () => {
         <ScrollView style={{height: '17%'}}>
           <View style={mystyle.star}>
             <Image
-              source={star}
+              source={require('../asset/img/star_1.png')}
               style={mystyle.imgstar}></Image>
             <Text style={mystyle.txtstar}>4.5</Text>
             <Text style={mystyle.txtstar2}>(50 reviews)</Text>
@@ -84,7 +86,10 @@ const Product = () => {
       {/*add */}
       <View style={mystyle.add}>
         <TouchableOpacity style={mystyle.addfav}>
-          <Image source={fav} style={{width: '100%', height: '100%'}} />
+          <Image
+            source={require('../asset/img/Frame_61.png')}
+            style={{width: 60, height: 60}}
+          />
         </TouchableOpacity>
         <TouchableOpacity style={mystyle.addcard}>
           <Text style={mystyle.txtaddcard}>Add to cart</Text>
@@ -117,7 +122,7 @@ const mystyle = StyleSheet.create({
     height: '50%',
   },
   anhspp: {
-    width: "87%",
+    width: '87%',
     height: 455,
     alignSelf: 'flex-end',
     borderRadius: 0,
@@ -134,8 +139,7 @@ const mystyle = StyleSheet.create({
     top: '92%',
   },
   slot2: {
-    width: '100%',
-    height: '100%',
+    flex: 1,
     display: 'flex',
     flexDirection: 'row',
   },
@@ -176,9 +180,9 @@ const mystyle = StyleSheet.create({
     marginBottom: 32,
   },
   imggr: {
-    flex:1,
-    resizeMode:'contain',
-    alignSelf:'center'
+    flex: 1,
+    resizeMode: 'contain',
+    alignSelf: 'center',
   },
   grselect: {
     position: 'absolute',
@@ -211,7 +215,7 @@ const mystyle = StyleSheet.create({
   giasl: {
     display: 'flex',
     flexDirection: 'row',
-    width: '100%',
+    flexShrink:1,
     height: 60,
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -229,8 +233,8 @@ const mystyle = StyleSheet.create({
     flexDirection: 'row',
     width: '40%',
     height: '70%',
-    marginRight:10,
-    alignItems:'center',
+    marginRight: 10,
+    alignItems: 'center',
     justifyContent: 'space-between',
   },
   buttonsl: {
@@ -254,10 +258,10 @@ const mystyle = StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
   },
-  imgstar:{
-    width:20,
-    height:20,
-    marginLeft:25
+  imgstar: {
+    width: 20,
+    height: 20,
+    marginLeft: 25,
   },
   txtstar: {
     color: '#303030',
@@ -289,9 +293,9 @@ const mystyle = StyleSheet.create({
   add: {
     width: '90%',
     height: '10%',
-    marginLeft:25,
-    marginRight:25,
-    marginTop:20,
+    marginLeft: 25,
+    marginRight: 25,
+    marginTop: 20,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',

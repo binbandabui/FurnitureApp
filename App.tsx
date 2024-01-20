@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Favor from './src/Favorite';
 import Product from './src/Product';
+import Home from './src/Home';
 
 function App(): React.JSX.Element {
   return (
