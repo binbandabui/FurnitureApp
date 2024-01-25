@@ -16,7 +16,7 @@ const Home = (props) => {
   const [itemslot, itemSlot] = useState(iconmenu);
   const [spitem, spItem] = useState(sp);
   const [selectedindex, setselectedIndex] = useState(1);
-  //menu
+  //menuhi
   const renderitem = ({item}) => {
     const {id, name, img} = item;
     return (
