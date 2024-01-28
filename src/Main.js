@@ -8,6 +8,8 @@ import Home from './Home';
 import Favor from './Favorite';
 import Product from './Product';
 import TinTuc from './TinTuc';
+import Payment from './Payment';
+import AddPayment from './AddPayment';
 const Main = props => {
   const Stack = createNativeStackNavigator();
   return (
@@ -15,6 +17,8 @@ const Main = props => {
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={HomeTabs} />
         <Stack.Screen name="Product" component={Product} />
+        <Stack.Screen name="Payment" component={Payment} />
+        <Stack.Screen name="AddPayment" component={AddPayment} />
       </Stack.Navigator>
     </NavigationContainer>
   );

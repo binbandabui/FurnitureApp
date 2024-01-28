@@ -12,8 +12,11 @@ const Product = props => {
   const gotoback = () => {
     navigation.navigate('Home');
   };
+    const gopayment = () => {
+      navigation.navigate('Payment');
+    };
   return (
-    <View style={{flex: 1,backgroundColor:'white'}}>
+    <View style={{flex: 1, backgroundColor: 'white'}}>
       {/*head */}
       <View style={mystyle.head}>
         <Image
@@ -94,7 +97,7 @@ const Product = props => {
             style={{flex: 1, resizeMode: 'contain'}}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={mystyle.addcard}>
+        <TouchableOpacity style={mystyle.addcard} onPress={gopayment}>
           <Text style={mystyle.txtaddcard}>Add to cart</Text>
         </TouchableOpacity>
       </View>

@@ -16,6 +16,8 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A6DDD580D38040E88C3EFB59 /* Gelasio-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A7BF1C2D19E413B8BD9CD91 /* Gelasio-Medium.ttf */; };
 		076242BCB91F40579AD1A48C /* NunitoSans_10pt_SemiCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05FB404D06DA47C49C99EEDD /* NunitoSans_10pt_SemiCondensed-Medium.ttf */; };
+		11659749F9DE448090B35AFD /* Merriweather-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8CF1E7A914F47C889972E4B /* Merriweather-Regular.ttf */; };
+		8A13098022894759A02A6AD2 /* Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 151018C4BD994581BFDC0ED5 /* Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		2A7BF1C2D19E413B8BD9CD91 /* Gelasio-Medium.ttf */ = {isa = PBXFileReference; name = "Gelasio-Medium.ttf"; path = "../asset/fonts/Gelasio-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		05FB404D06DA47C49C99EEDD /* NunitoSans_10pt_SemiCondensed-Medium.ttf */ = {isa = PBXFileReference; name = "NunitoSans_10pt_SemiCondensed-Medium.ttf"; path = "../asset/fonts/NunitoSans_10pt_SemiCondensed-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D8CF1E7A914F47C889972E4B /* Merriweather-Regular.ttf */ = {isa = PBXFileReference; name = "Merriweather-Regular.ttf"; path = "../asset/fonts/Merriweather-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		151018C4BD994581BFDC0ED5 /* Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf */ = {isa = PBXFileReference; name = "Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf"; path = "../asset/fonts/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,8 @@
 			children = (
 				2A7BF1C2D19E413B8BD9CD91 /* Gelasio-Medium.ttf */,
 				05FB404D06DA47C49C99EEDD /* NunitoSans_10pt_SemiCondensed-Medium.ttf */,
+				D8CF1E7A914F47C889972E4B /* Merriweather-Regular.ttf */,
+				151018C4BD994581BFDC0ED5 /* Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				A6DDD580D38040E88C3EFB59 /* Gelasio-Medium.ttf in Resources */,
 				076242BCB91F40579AD1A48C /* NunitoSans_10pt_SemiCondensed-Medium.ttf in Resources */,
+				11659749F9DE448090B35AFD /* Merriweather-Regular.ttf in Resources */,
+				8A13098022894759A02A6AD2 /* Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
