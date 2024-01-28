@@ -6,20 +6,32 @@ import {
   Image,
   TextInput,
   KeyboardAvoidingView,
+  Modal,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 
-const AddPayment = () => {
+const AddPayment = props => {
+  const {navigation} = props;
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const goback = () => {
+    navigation.goBack();
+  };
+  const showSuccessAndHide = () => {
+    setShowSuccessMessage(true);
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+    },1000);
+  };
   return (
     <View style={mystyle.body}>
       <View style={mystyle.head}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={goback}>
           <Image
             style={{width: 20, height: 20}}
             source={require('../asset/img/Frame_14.png')}
           />
         </TouchableOpacity>
-        <Text style={mystyle.txthead}>Payment method</Text>
+        <Text style={mystyle.txthead}>Add Payment method</Text>
       </View>
       <Image
         style={mystyle.card}
@@ -32,7 +44,7 @@ const AddPayment = () => {
 
       <View style={mystyle.carnum}>
         <Text style={mystyle.txtcardhol1}>CardHolder Number</Text>
-        <TextInput style={mystyle.txtcarnum} />
+        <TextInput style={mystyle.txtcarnum} inputMode="numeric" />
       </View>
       <View style={mystyle.cvvdate}>
         <View style={mystyle.cvv}>
@@ -41,12 +53,23 @@ const AddPayment = () => {
         </View>
         <View style={mystyle.date}>
           <Text style={mystyle.txtcardhol1}>Expiration Date</Text>
-          <TextInput style={mystyle.txtcarnum}>03/22</TextInput>
+          <TextInput style={mystyle.txtcarnum} inputMode="tel">
+            03/22
+          </TextInput>
         </View>
       </View>
-      <TouchableOpacity style={mystyle.btnadd}>
+      <TouchableOpacity style={mystyle.btnadd} onPress={showSuccessAndHide}>
         <Text style={mystyle.txtbtn}>ADD NEW CARD</Text>
       </TouchableOpacity>
+      {showSuccessMessage && (
+        <Modal animationType="fade" transparent={true}>
+          <View style={mystyle.modalContainer}>
+            <View style={mystyle.modalContent}>
+              <Text style={mystyle.modalText}>Card added Failed!</Text>
+            </View>
+          </View>
+        </Modal>
+      )}
     </View>
   );
 };
@@ -101,7 +124,6 @@ const mystyle = StyleSheet.create({
     height: '80%',
     color: 'black',
     paddingTop: 5,
-    fontWeight: '600',
     fontFamily: 'NunitoSans_10pt_SemiCondensed-Medium',
   },
   carnum: {
@@ -150,7 +172,27 @@ const mystyle = StyleSheet.create({
     color: '#303030',
     fontSize: 16,
     fontWeight: '700',
-    marginLeft: '28%',
-    marginRight: '28%',
+    marginLeft: '24%',
+    marginRight: '24%',
+  },
+  modalContainer: {
+    position: 'absolute',
+    bottom: '15%',
+    left: '25%',
+    right: '25%',
+  },
+
+  modalContent: {
+    backgroundColor: '#242424',
+    padding: 15,
+    borderRadius: 8,
+  },
+
+  modalText: {
+    color: 'white',
+    fontSize: 16,
+    fontFamily: 'NunitoSans_10pt_SemiCondensed-Medium',
+    textAlign: 'center',
+    alignSelf: 'center',
   },
 });

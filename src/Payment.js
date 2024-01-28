@@ -1,7 +1,14 @@
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
-import {CheckBox} from 'react-native-elements';
-const Payment = () => {
+
+const Payment = props => {
+  const {navigation} = props;
+  const goback = () => {
+    navigation.goBack();
+  };
+  const goaddpayment = () => {
+    navigation.navigate('AddPayment');
+  };
   const [checked1, setChecked1] = useState(true);
   const [checked2, setChecked2] = useState(false);
 
@@ -27,7 +34,7 @@ const Payment = () => {
   return (
     <View style={mystyle.body}>
       <View style={mystyle.head}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={goback}>
           <Image
             style={{width: 20, height: 20}}
             source={require('../asset/img/Frame_14.png')}
@@ -77,7 +84,7 @@ const Payment = () => {
             backgroundColor: 'white',
             elevation: 1,
           }}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={goaddpayment}>
             <Text style={{fontSize: 30, color: 'black'}}>+</Text>
           </TouchableOpacity>
         </View>
@@ -114,8 +121,7 @@ const mystyle = StyleSheet.create({
     marginLeft: '2%',
     color: '#222222',
     fontSize: 14,
-    fontFamily: 'Nunito Sans',
-    fontWeight: '400',
+    fontFamily: 'NunitoSans_10pt_SemiCondensed-Medium',
   },
   imgcheck: {width: 20, height: 20},
   head: {
@@ -129,9 +135,10 @@ const mystyle = StyleSheet.create({
   txthead: {
     color: '#303030',
     fontSize: 16,
-    fontWeight: '700',
     marginLeft: '28%',
+    fontWeight: 'bold',
     marginRight: '28%',
+    fontFamily: 'Merriweather-Bold',
   },
   card: {
     maxWidth: '113%',

@@ -16,13 +16,14 @@ const Home = (props) => {
   const [itemslot, itemSlot] = useState(iconmenu);
   const [spitem, spItem] = useState(sp);
   const [selectedindex, setselectedIndex] = useState(1);
-  //menuhi
+  //menu
   const renderitem = ({item}) => {
     const {id, name, img} = item;
     return (
       <TouchableOpacity
         style={mystyle.flatiem}
-        onPress={() => setselectedIndex(id)}>
+        onPress={() => setselectedIndex(id)}
+        activeOpacity={0.8}>
         <View
           style={[
             mystyle.item,
@@ -32,7 +33,13 @@ const Home = (props) => {
           ]}>
           <Image source={img} style={mystyle.imgitem} />
         </View>
-        <Text style={mystyle.txtiem}>{name}</Text>
+        <Text
+          style={[
+            mystyle.txtiem,
+            {color: id === selectedindex ? '#242424' : '#999'},
+          ]}>
+          {name}
+        </Text>
       </TouchableOpacity>
     );
   };
@@ -55,7 +62,7 @@ const Home = (props) => {
     );
   };
   return (
-    <View style={{flex: 1,backgroundColor:'white'}}>
+    <View style={{flex: 1, backgroundColor: '#FFF'}}>
       <View style={mystyle.head}>
         <TouchableOpacity>
           <Image
@@ -93,7 +100,6 @@ const Home = (props) => {
           style={mystyle.sp}
         />
       </View>
-
     </View>
   );
 };
@@ -126,9 +132,9 @@ const mystyle = StyleSheet.create({
     color: '#606060',
     fontSize: 14,
     fontStyle: 'normal',
-    fontWeight: '400',
     lineHeight: 24,
     marginTop: '4%',
+    fontFamily: 'NunitoSans_10pt_SemiCondensed-Medium',
   },
   txtpricesp: {
     color: '#303030',
@@ -136,6 +142,7 @@ const mystyle = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '700',
     lineHeight: 24,
+    fontFamily: 'NunitoSans_10pt_SemiCondensed-Medium',
   },
   imgframe_19: {
     width: '19%',
@@ -198,7 +205,7 @@ const mystyle = StyleSheet.create({
   txt3head: {
     fontSize: 20,
     fontStyle: 'normal',
-    fontWeight: '700',
+    fontWeight: '600',
     lineHeight: 25,
     color: '#242424',
     fontFamily: 'Gelasio-Medium',
