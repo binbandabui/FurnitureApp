@@ -51,6 +51,8 @@
 	<array>
 		<string>Gelasio-Medium.ttf</string>
 		<string>NunitoSans_10pt_SemiCondensed-Medium.ttf</string>
+		<string>Merriweather-Regular.ttf</string>
+		<string>Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf</string>
 	</array>
 </dict>
 </plist>
