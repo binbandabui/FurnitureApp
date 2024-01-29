@@ -6,17 +6,17 @@ import {
   StyleSheet,
   ScrollView,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 const Product = props => {
-  const {navigation} = props;
+  const { navigation } = props;
   const gotoback = () => {
     navigation.navigate('Home');
   };
-    const gopayment = () => {
-      navigation.navigate('Payment');
-    };
+  const gopayment = () => {
+    navigation.navigate('Payment');
+  };
   return (
-    <View style={{flex: 1, backgroundColor: 'white'}}>
+    <View style={{ flex: 1, backgroundColor: 'white' }}>
       {/*head */}
       <View style={mystyle.head}>
         <Image
@@ -63,17 +63,17 @@ const Product = props => {
             <TouchableOpacity style={mystyle.buttonsl}>
               <Image
                 source={require('../asset/img/Group_15.png')}
-                style={{flex: 1, resizeMode: 'contain'}}></Image>
+                style={{ flex: 1, resizeMode: 'contain' }}></Image>
             </TouchableOpacity>
             <Text style={[mystyle.txtsl]}>01</Text>
             <TouchableOpacity style={mystyle.buttonsl}>
               <Image
                 source={require('../asset/img/Group_23.png')}
-                style={{flex: 1, resizeMode: 'contain'}}></Image>
+                style={{ flex: 1, resizeMode: 'contain' }}></Image>
             </TouchableOpacity>
           </View>
         </View>
-        <ScrollView style={{height: '17%'}}>
+        <ScrollView style={{ height: '17%' }}>
           <View style={mystyle.star}>
             <Image
               source={require('../asset/img/star_1.png')}
@@ -94,7 +94,7 @@ const Product = props => {
         <TouchableOpacity style={mystyle.addfav}>
           <Image
             source={require('../asset/img/Frame_61.png')}
-            style={{flex: 1, resizeMode: 'contain'}}
+            style={{ flex: 1, resizeMode: 'contain' }}
           />
         </TouchableOpacity>
         <TouchableOpacity style={mystyle.addcard} onPress={gopayment}>

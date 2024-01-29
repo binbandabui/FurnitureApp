@@ -55,24 +55,7 @@ const Favor = (props) => {
 
             </TouchableOpacity>
 
-            <View style={styles.containertb1}>
-                <TouchableOpacity  >
-                    <Image style={(styles.tbicon)}
-                        source={require('../asset/img/home-tb.png')}></Image>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Image style={(styles.tbicon)}
-                        source={require('../asset/img/fav_tb.png')}></Image>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Image style={(styles.tbicon)}
-                        source={require('../asset/img/bell_tb.png')}></Image>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Image style={(styles.tbicon)}
-                        source={require('../asset/img/profile_tb.png')}></Image>
-                </TouchableOpacity>
-            </View>
+
         </View>
 
     )
