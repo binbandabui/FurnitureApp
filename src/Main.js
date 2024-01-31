@@ -15,6 +15,7 @@ import MyOrder from './MyOrder';
 import ShipAddress from './ShipAddress';
 import Checkout from './Checkout';
 import Congrat from './Congrat';
+import Cart from './Cart';
 const Main = props => {
   const Stack = createNativeStackNavigator();
   return (
@@ -28,6 +29,7 @@ const Main = props => {
         <Stack.Screen name="ShippingAddress" component={ShipAddress} />
         <Stack.Screen name="Checkout" component={Checkout} />
         <Stack.Screen name="Congrat" component={Congrat} />
+        <Stack.Screen name="Cart" component={Cart} />
       </Stack.Navigator>
     </NavigationContainer>
   );
