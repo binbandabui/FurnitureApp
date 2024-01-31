@@ -13,6 +13,10 @@ const Checkout = props => {
   const gopaymemt = () => {
     navigation.navigate('Payment');
   };
+
+  const gocongrat = () => {
+    navigation.navigate('Congrat');
+  };
   return (
     <View style={mystyle.body}>
       <View style={mystyle.head}>
@@ -100,7 +104,10 @@ const Checkout = props => {
           </View>
         </View>
 
-        <TouchableOpacity style={mystyle.btnadd} activeOpacity={0.5}>
+        <TouchableOpacity
+          style={mystyle.btnadd}
+          activeOpacity={0.5}
+          onPress={gocongrat}>
           <Text style={mystyle.txtbtn}>SUBMIT ORDER</Text>
         </TouchableOpacity>
       </View>
