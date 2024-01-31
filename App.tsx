@@ -16,6 +16,7 @@ import TinTuc from './src/TinTuc';
 import ManKhoiDau from './src/ManKhoiDau';
 import Payment from './src/Payment';
 import AddPayment from './src/AddPayment';
+import Checkout from './src/Checkout';
 
 function App(): React.JSX.Element {
   return (

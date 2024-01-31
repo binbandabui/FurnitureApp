@@ -13,7 +13,7 @@ const Product = props => {
     navigation.navigate('Home');
   };
   const gopayment = () => {
-    navigation.navigate('Payment');
+    navigation.navigate('Checkout');
   };
   return (
     <View style={{ flex: 1, backgroundColor: 'white' }}>

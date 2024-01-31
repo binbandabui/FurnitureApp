@@ -13,6 +13,7 @@ import AddPayment from './AddPayment';
 import ProfileScreen from './ProfileScreen';
 import MyOrder from './MyOrder';
 import ShipAddress from './ShipAddress';
+import Checkout from './Checkout';
 const Main = props => {
   const Stack = createNativeStackNavigator();
   return (
@@ -24,6 +25,7 @@ const Main = props => {
         <Stack.Screen name="AddPayment" component={AddPayment} />
         <Stack.Screen name="MyOrder" component={MyOrder} />
         <Stack.Screen name="ShippingAddress" component={ShipAddress} />
+        <Stack.Screen name='Checkout' component={Checkout}/>
 
       </Stack.Navigator>
     </NavigationContainer>
