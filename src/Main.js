@@ -19,7 +19,6 @@ import Cart from './Cart';
 const Main = props => {
   const Stack = createNativeStackNavigator();
   return (
-    <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={HomeTabs} />
         <Stack.Screen name="Product" component={Product} />
@@ -31,7 +30,6 @@ const Main = props => {
         <Stack.Screen name="Congrat" component={Congrat} />
         <Stack.Screen name="Cart" component={Cart} />
       </Stack.Navigator>
-    </NavigationContainer>
   );
 };
 const HomeTabs = () => {
