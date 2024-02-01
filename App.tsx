@@ -20,14 +20,17 @@ import Cart from './src/Cart';
 import Congrat from './src/Congrat';
 import Login from './src/Login';
 import Register from './src/Register';
+import { Appprovider } from './src/Appcontext';
+import AppNavigation from './src/AppNavigation';
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar translucent backgroundColor={'rgba(0,0,0,0)'} />
- <Register/>
-
-    </SafeAreaView>
+    <Appprovider>
+      <SafeAreaView style={{flex: 1}}>
+        <StatusBar translucent backgroundColor={'rgba(0,0,0,0)'} />
+        <AppNavigation />
+      </SafeAreaView>
+    </Appprovider>
   );
 }
 

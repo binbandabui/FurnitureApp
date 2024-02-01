@@ -8,11 +8,14 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 
-const Home = (props) => {
-  const {navigation}=props;
-  const gotoproduct=()=>{
+const Home = props => {
+  const {navigation} = props;
+  const gotoproduct = () => {
     navigation.navigate('Product');
-  }
+  };
+  const gotocart = () => {
+    navigation.navigate('Cart');
+  };
   const [itemslot, itemSlot] = useState(iconmenu);
   const [spitem, spItem] = useState(sp);
   const [selectedindex, setselectedIndex] = useState(1);
@@ -74,7 +77,7 @@ const Home = (props) => {
           <Text style={mystyle.txt2head}>Make home</Text>
           <Text style={mystyle.txt3head}>BEAUTIFUL</Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={gotocart}>
           <Image
             source={require('../asset/img/bi_cart.png')}
             style={mystyle.imghead}

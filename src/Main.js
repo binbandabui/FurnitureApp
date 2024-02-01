@@ -13,20 +13,23 @@ import AddPayment from './AddPayment';
 import ProfileScreen from './ProfileScreen';
 import MyOrder from './MyOrder';
 import ShipAddress from './ShipAddress';
+import Checkout from './Checkout';
+import Congrat from './Congrat';
+import Cart from './Cart';
 const Main = props => {
   const Stack = createNativeStackNavigator();
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={HomeTabs} />
         <Stack.Screen name="Product" component={Product} />
         <Stack.Screen name="Payment" component={Payment} />
         <Stack.Screen name="AddPayment" component={AddPayment} />
         <Stack.Screen name="MyOrder" component={MyOrder} />
         <Stack.Screen name="ShippingAddress" component={ShipAddress} />
-
+        <Stack.Screen name="Checkout" component={Checkout} />
+        <Stack.Screen name="Congrat" component={Congrat} />
+        <Stack.Screen name="Cart" component={Cart} />
       </Stack.Navigator>
-    </NavigationContainer>
   );
 };
 const HomeTabs = () => {
