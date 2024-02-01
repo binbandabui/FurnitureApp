@@ -18,12 +18,15 @@ import Payment from './src/Payment';
 import AddPayment from './src/AddPayment';
 import Cart from './src/Cart';
 import Congrat from './src/Congrat';
+import Login from './src/Login';
+import Register from './src/Register';
 
 function App(): React.JSX.Element {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <StatusBar translucent backgroundColor={'rgba(0,0,0,0)'} />
-      <Main />
+ <Register/>
+
     </SafeAreaView>
   );
 }
