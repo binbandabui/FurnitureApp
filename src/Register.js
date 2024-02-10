@@ -5,13 +5,28 @@ import {
   View,
   TouchableOpacity,
   TextInput,
+  Alert,
 } from 'react-native';
-import React from 'react';
+import React, {useContext, useState} from 'react';
+import {Appcontext} from './Appcontext';
+import MyOrder from './MyOrder';
 
 const Register = props => {
   const {navigation} = props;
   const login = () => {
     navigation.navigate('Login');
+  };
+  const {setIsLogin} = useContext(Appcontext);
+  const [Name, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const handleOnSumit = () => {
+    if (!Name || (Name.length < 1 && !password) || password.length < 1) {
+      Alert.alert('Information cannot be left blank!');
+      return;
+    } else {
+      setIsLogin(true);
+    }
+    return;
   };
   return (
     <View style={styles.container}>
@@ -23,7 +38,7 @@ const Register = props => {
         <View>
           <Image
             style={styles.logoac}
-            source={require('../asset/img/logoac.png')}
+            source={require('../asset/img/gr.png')}
           />
         </View>
 
@@ -35,48 +50,49 @@ const Register = props => {
       <View style={styles.welcome}>
         <Text style={styles.welcomeback}>WELCOME</Text>
       </View>
-      <View style={styles.containerte}>
+      <View style={styles.styleinput}>
+        <Text style={styles.txtemail}>Name</Text>
         <View style={styles.TextInput}>
-          <TextInput style={styles.text} placeholder="  Name" />
-          <TextInput
-            style={[styles.text, styles.textmail]}
-            placeholder="  Email"
-          />
+          <TextInput style={styles.text} onChange={text => setName(text)} />
         </View>
+        <Text style={styles.txtemail}>Email</Text>
+        <View style={styles.TextInput}>
+          <TextInput style={styles.text} onChange={text => setName(text)} />
+        </View>
+        <Text style={[styles.txtemail]}>Password</Text>
         <View style={styles.TextInput}>
           <TextInput
             style={styles.text}
-            placeholder=" Password"
             secureTextEntry={true}
+            onChange={text => setPassword(text)}
           />
           <Image
             style={styles.iconeye}
             source={require('../asset/img/eye2.png')}
           />
         </View>
+        <Text style={[styles.txtemail]}>Confirm Password</Text>
         <View style={styles.TextInput}>
           <TextInput
             style={styles.text}
-            placeholder=" Confirm Passwword"
             secureTextEntry={true}
+            onChange={text => setPassword(text)}
           />
           <Image
             style={styles.iconeye}
             source={require('../asset/img/eye2.png')}
           />
         </View>
-      </View>
-
-      <View style={styles.forgot}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.textlg}>SIGN UP</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.forgot}>
-        <TouchableOpacity onPress={login}>
-          <Text style={styles.textSU1}>
-            Already have account?<Text style={styles.textSU}> SIGN UP</Text>
-          </Text>
+        <View style={styles.forgot}>
+          <TouchableOpacity
+            style={[styles.button, {marginRight: 17}]}
+            onPress={handleOnSumit}>
+            <Text style={[styles.textlg]}>SIGN UP</Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity style={styles.sign} onPress={login}>
+          <Text>Already have account?</Text>
+          <Text style={{color: '#303030', fontWeight: 'bold'}}> SIGN IN</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -85,94 +101,128 @@ const Register = props => {
 export default Register;
 
 const styles = StyleSheet.create({
-  textSU1: {
-    fontSize: 17,
+  sign: {
+    flexDirection:'row',
+    alignSelf:'center',
+    marginTop:'5%'
   },
-  textmail: {
-    marginTop: 15,
+  txtemail: {
+    fontFamily: 'NunitoSans12pt-Regular',
+    marginLeft: 10,
+    color: '#909090',
   },
-  containerte: {
-    marginTop: 10,
+  styleinput: {
+    backgroundColor: '#FFFFFF',
+    width: '92%',
+    height: '66%',
+    elevation: 8,
+    paddingLeft: 17,
+    paddingTop: 17,
+    paddingBottom: 17,
+    marginTop: -20,
   },
   textSU: {
     color: '#303030',
-    textAlign: 'center',
+    alignSelf: 'center',
     fontSize: 18,
+    marginRight: 17,
     fontStyle: 'normal',
     fontWeight: '600',
+    fontFamily: 'NunitoSans12pt-SemiBold',
   },
   textlg: {
-    textAlign: 'center',
+    alignSelf: 'center',
     color: '#fff',
     fontSize: 18,
     fontWeight: '600',
-    marginTop: 22,
+    marginTop: 12,
   },
   button: {
     borderRadius: 8,
-    width: '100%',
-    height: 70,
+    width: '90%',
+    height: 50,
     backgroundColor: '#242424',
     flexShrink: 0,
+    alignSelf: 'center',
   },
-
+  textfg: {
+    color: '#303030',
+    alignSelf: 'center',
+    fontSize: 18,
+    fontWeight: '600',
+    fontStyle: 'normal',
+    marginRight: 17,
+    fontFamily: 'NunitoSans12pt-SemiBold',
+  },
   forgot: {
-    alignItems: 'center',
-    marginTop: 55,
+    width: '90%',
+
+    alignSelf: 'center',
+    marginTop: 35,
   },
   iconeye: {
     position: 'absolute',
-    top: 25,
+    top: 15,
     right: 20,
     backgroundColor: '#fff',
   },
   text: {
     width: '100%',
-    height: 60,
-    borderWidth: 1,
-    borderColor: '#252a32',
+    height: 48,
+    borderBottomWidth: 1,
+    borderColor: '#E0E0E0',
     borderRadius: 8,
     backgroundColor: '#fff',
     paddingVertical: 11,
     paddingHorizontal: 17,
   },
   TextInput: {
-    marginTop: 15,
+    marginTop: 5,
     width: '100%',
+    marginBottom: 10,
   },
   welcomeback: {
     color: '#303030',
     fontSize: 24,
-    fontStyle: 'normal',
-    fontWeight: '700',
     lineHeight: 45,
     letterSpacing: 1.2,
+    fontWeight: '700',
+    fontFamily: 'Merriweather-Bold',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: {width: 1, height: 2},
+    textShadowRadius: 5,
+  },
+  hello: {
+    color: '#909090',
+    fontSize: 30,
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: 45,
+    fontFamily: 'Merriweather-Regular',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: {width: 1, height: 2},
+    textShadowRadius: 5,
   },
   welcome: {
     left: 30,
-    marginTop: 20,
+    marginTop: 15,
     width: 216,
-    height: 40,
+    height: 93,
   },
   rectangri: {
     top: 53,
-    right: 20,
+    right: 35,
   },
   rectangle: {
     top: 53,
-    left: 20,
+    left: 30,
   },
   logoac: {
-    overflow: 'hidden',
     marginTop: 22,
-    justifyContent: 'space-between',
-    resizeMode: 'cover',
-    borderWidth: 6,
-    backgroundColor: 'black',
-    width: 64,
-    height: 64,
+    resizeMode: 'contain',
+    width: 74,
+    height: 74,
     flexShrink: 0,
-    borderRadius: 50,
   },
   row: {
     justifyContent: 'space-between',
@@ -183,6 +233,6 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '100%',
-    padding: 17,
+    backgroundColor: '#FFF',
   },
 });

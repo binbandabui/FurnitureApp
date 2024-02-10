@@ -23,12 +23,13 @@ import Register from './src/Register';
 import { Appprovider } from './src/Appcontext';
 import AppNavigation from './src/AppNavigation';
 
+
 function App(): React.JSX.Element {
   return (
     <Appprovider>
       <SafeAreaView style={{flex: 1}}>
         <StatusBar translucent backgroundColor={'rgba(0,0,0,0)'} />
-        <AppNavigation />
+        <AppNavigation/>
       </SafeAreaView>
     </Appprovider>
   );
