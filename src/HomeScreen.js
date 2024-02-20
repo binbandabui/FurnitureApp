@@ -6,11 +6,31 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
+import AxiosInstancemork from './app/helpers/AxiosInstancemork';
+import {Appcontext} from './Appcontext';
+import {color} from 'react-native-elements/dist/helpers';
 
-const Home = props => {
+const HomeScreen = props => {
   const {navigation} = props;
-  const gotoproduct = () => {
+  const {id, setId} = useContext(Appcontext);
+  const {produce, setProduce} = useContext(Appcontext);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = async () => {
+    try {
+      const response = await AxiosInstancemork().get('/produce');
+      setProduce(response);
+      setLoading(false)
+    } catch (error) {
+      console.log(error);
+      Alert.alert('Lỗi');
+    }
+  };
+  const gotoproduct = id => {
+    setId(id);
     navigation.navigate('Product');
   };
   const gotocart = () => {
@@ -48,10 +68,10 @@ const Home = props => {
   };
   //sp
   const renderspitem = ({item}) => {
-    const {id, name, price, img} = item;
+    const {id, name, price, image} = item;
     return (
-      <TouchableOpacity style={mystyle.itemsp} onPress={gotoproduct}>
-        <Image source={img} style={mystyle.imgitemsp} />
+      <TouchableOpacity style={mystyle.itemsp} onPress={() => gotoproduct(id)}>
+        <Image source={{uri: image}} style={mystyle.imgitemsp} />
         <Text style={mystyle.txtnamesp}>{name}</Text>
         <Text style={mystyle.txtpricesp}>
           <Text>$ </Text>
@@ -94,20 +114,24 @@ const Home = props => {
         />
       </View>
       <View style={mystyle.flatspitem}>
-        <FlatList
-          numColumns={2}
-          data={spitem}
-          renderItem={renderspitem}
-          keyExtractor={(item, index) => `${item.id}_${index}`}
-          showsHorizontalScrollIndicator={false}
-          style={mystyle.sp}
-        />
+        {loading ? (
+          <Text>Loading...</Text>
+        ) : (
+          <FlatList
+            numColumns={2}
+            data={produce}
+            renderItem={renderspitem}
+            keyExtractor={(item, index) => `${item.id}_${index}`}
+            showsHorizontalScrollIndicator={false}
+            style={mystyle.sp}
+          />
+        )}
       </View>
     </View>
   );
 };
 
-export default Home;
+export default HomeScreen;
 const mystyle = StyleSheet.create({
   head: {
     flexShrink: 1,

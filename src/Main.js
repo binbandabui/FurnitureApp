@@ -1,10 +1,10 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import React, { useState } from 'react';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
+import React, {useState} from 'react';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import Home from './Home';
+import Home from './HomeScreen';
 import Favor from './Favorite';
 import Product from './Product';
 import TinTuc from './TinTuc';
@@ -19,17 +19,17 @@ import Cart from './Cart';
 const Main = props => {
   const Stack = createNativeStackNavigator();
   return (
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={HomeTabs} />
-        <Stack.Screen name="Product" component={Product} />
-        <Stack.Screen name="Payment" component={Payment} />
-        <Stack.Screen name="AddPayment" component={AddPayment} />
-        <Stack.Screen name="MyOrder" component={MyOrder} />
-        <Stack.Screen name="ShippingAddress" component={ShipAddress} />
-        <Stack.Screen name="Checkout" component={Checkout} />
-        <Stack.Screen name="Congrat" component={Congrat} />
-        <Stack.Screen name="Cart" component={Cart} />
-      </Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="HomeScreen" component={HomeTabs} />
+      <Stack.Screen name="Product" component={Product} />
+      <Stack.Screen name="Payment" component={Payment} />
+      <Stack.Screen name="AddPayment" component={AddPayment} />
+      <Stack.Screen name="MyOrder" component={MyOrder} />
+      <Stack.Screen name="ShippingAddress" component={ShipAddress} />
+      <Stack.Screen name="Checkout" component={Checkout} />
+      <Stack.Screen name="Congrat" component={Congrat} />
+      <Stack.Screen name="Cart" component={Cart} />
+    </Stack.Navigator>
   );
 };
 const HomeTabs = () => {
@@ -43,13 +43,13 @@ const HomeTabs = () => {
     </Tab.Navigator>
   );
 };
-const tabScreenOptions = ({ route }) => {
+const tabScreenOptions = ({route}) => {
   return {
     headerShown: false,
     tabBarShowLabel: false,
-    style: { height: 60 },
-    tabBarStyle: { height: '8%' },
-    tabBarIcon: ({ focused }) => {
+    style: {height: 60},
+    tabBarStyle: {height: '8%'},
+    tabBarIcon: ({focused}) => {
       if (route.name == 'Home') {
         return (
           <Image
@@ -100,5 +100,5 @@ const tabScreenOptions = ({ route }) => {
 };
 export default Main;
 const mystyle = StyleSheet.create({
-  imgnav: { width: 25, height: 25 },
+  imgnav: {width: 25, height: 25},
 });

@@ -5,23 +5,42 @@ import {
   Image,
   StyleSheet,
   ScrollView,
+  ToastAndroid,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
+import {Appcontext} from './Appcontext';
+import AxiosInstancemork from './app/helpers/AxiosInstancemork';
 const Product = props => {
-  const { navigation } = props;
+  const {id} = useContext(Appcontext);
+  const [detail, setDetail] = useState([]);
+  const {navigation} = props;
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = async () => {
+    try {
+      const response = await AxiosInstancemork().get(`/produce/${id}`);
+      setDetail(response);
+    } catch (error) {
+      console.log(error);
+      Alert.alert('Lỗi');
+    }
+  };
   const gotoback = () => {
     navigation.navigate('Home');
   };
-  const gopayment = () => {
-    navigation.navigate('Checkout');
+  const added = () => {
+    ToastAndroid.show('Added to cart!', ToastAndroid.SHORT);
   };
   return (
-    <View style={{ flex: 1, backgroundColor: 'white' }}>
+    <View style={{flex: 1, backgroundColor: 'white'}}>
       {/*head */}
       <View style={mystyle.head}>
-        <Image
-          source={require('../asset/img/2681826.png')}
-          style={mystyle.anhspp}></Image>
+        {detail.image ? (
+          <Image source={{uri: detail.image}} style={mystyle.anhspp} />
+        ) : (
+          <Text style={mystyle.load}>Loading...</Text>
+        )}
         <View style={mystyle.selectcolor}>
           <View style={mystyle.biggroup}>
             <TouchableOpacity style={[mystyle.gr]}>
@@ -56,37 +75,32 @@ const Product = props => {
       </View>
       {/*content */}
       <View>
-        <Text style={mystyle.namesp}>Minimal Stand</Text>
+        <Text style={mystyle.namesp}>{detail.name}</Text>
         <View style={mystyle.giasl}>
-          <Text style={mystyle.gia}>$ 50</Text>
+          <Text style={mystyle.gia}>$ {detail.price}</Text>
           <View style={mystyle.sl}>
             <TouchableOpacity style={mystyle.buttonsl}>
               <Image
                 source={require('../asset/img/Group_15.png')}
-                style={{ flex: 1, resizeMode: 'contain' }}></Image>
+                style={{flex: 1, resizeMode: 'contain'}}></Image>
             </TouchableOpacity>
-            <Text style={[mystyle.txtsl]}>01</Text>
+            <Text style={[mystyle.txtsl]}>{detail.count}</Text>
             <TouchableOpacity style={mystyle.buttonsl}>
               <Image
                 source={require('../asset/img/Group_23.png')}
-                style={{ flex: 1, resizeMode: 'contain' }}></Image>
+                style={{flex: 1, resizeMode: 'contain'}}></Image>
             </TouchableOpacity>
           </View>
         </View>
-        <ScrollView style={{ height: '17%' }}>
+        <ScrollView style={{height: '17%'}}>
           <View style={mystyle.star}>
             <Image
               source={require('../asset/img/star_1.png')}
               style={mystyle.imgstar}></Image>
-            <Text style={mystyle.txtstar}>4.5</Text>
-            <Text style={mystyle.txtstar2}>(50 reviews)</Text>
+            <Text style={mystyle.txtstar}>{detail.rate}</Text>
+            <Text style={mystyle.txtstar2}>({detail.vote} reviews)</Text>
           </View>
-          <Text style={mystyle.txtcontent}>
-            Minimal Stand is made of by natural wood. The design that is very
-            simple and minimal. This is truly one of the best furnitures in any
-            family for now. With 3 different colors, you can easily select the
-            best match for your home.
-          </Text>
+          <Text style={mystyle.txtcontent}>{detail.content}</Text>
         </ScrollView>
       </View>
       {/*add */}
@@ -94,10 +108,10 @@ const Product = props => {
         <TouchableOpacity style={mystyle.addfav}>
           <Image
             source={require('../asset/img/Frame_61.png')}
-            style={{ flex: 1, resizeMode: 'contain' }}
+            style={{flex: 1, resizeMode: 'contain'}}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={mystyle.addcard} onPress={gopayment}>
+        <TouchableOpacity style={mystyle.addcard} onPress={added}>
           <Text style={mystyle.txtaddcard}>Add to cart</Text>
         </TouchableOpacity>
       </View>
@@ -111,6 +125,13 @@ const mystyle = StyleSheet.create({
     flexShrink: 1,
     height: '55%',
   },
+  load: {
+    marginTop: '2%',
+    textAlign: 'center',
+    justifyContent: 'center',
+    color: 'black',
+  },
+
   back: {
     width: 40,
     height: 40,
