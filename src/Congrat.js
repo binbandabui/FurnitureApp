@@ -2,14 +2,21 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 
-const Congrat = () => {
+const Congrat = props => {
+    const { navigation } = props;
+    const goMyOrder = () => {
+        navigation.navigate('MyOrder');
+    };
+    const goHome = () => {
+        navigation.navigate('Home');
+    };
     return (
         <View style={styles.container}>
             <Text style={styles.t}>Success!</Text>
             <View style={styles.imgcontainer}><Image source={require('../asset/img/suc.png')} /><Image style={{ marginTop: 20 }} source={require('../asset/img/tick.png')} /></View>
             <Text style={styles.context}>Your order will be delivery soon. Thank you for chosing our app</Text>
-            <TouchableOpacity style={styles.btnCon}><Text style={{ color: 'white', textAlign: 'center', fontWeight: '600', fontSize: 18 }}>Track your order</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.btnCon1}><Text style={{ color: 'black', textAlign: 'center', fontWeight: '600', fontSize: 18 }}>Back to home</Text></TouchableOpacity>
+            <TouchableOpacity onPress={goMyOrder} style={styles.btnCon}><Text style={{ color: 'white', textAlign: 'center', fontWeight: '600', fontSize: 18 }}>Track your order</Text></TouchableOpacity>
+            <TouchableOpacity onPress={goHome} style={styles.btnCon1}><Text style={{ color: 'black', textAlign: 'center', fontWeight: '600', fontSize: 18 }}>Back to home</Text></TouchableOpacity>
 
         </View>
     )
