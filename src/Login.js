@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import React, {useContext, useState} from 'react';
 import {Appcontext} from './Appcontext';
+import MyOrder from './MyOrder';
 
 const Login = props => {
   const {navigation} = props;
@@ -19,10 +20,10 @@ const Login = props => {
   const [Name, setName] = useState('');
   const [password, setPassword] = useState('');
   const handleOnSumit = () => {
-    if (!Name || Name.length < 1 && !password || password.length < 1) {
+    if (!Name || (Name.length < 1 && !password) || password.length < 1) {
       Alert.alert('Information cannot be left blank!');
       return;
-    } else{
+    } else {
       setIsLogin(true);
     }
     return;
@@ -37,7 +38,7 @@ const Login = props => {
         <View>
           <Image
             style={styles.logoac}
-            source={require('../asset/img/logoac.png')}
+            source={require('../asset/img/gr.png')}
           />
         </View>
 
@@ -50,39 +51,40 @@ const Login = props => {
         <Text style={styles.hello}>Hello!</Text>
         <Text style={styles.welcomeback}>WELCOME BACK</Text>
       </View>
-      <View style={styles.TextInput}>
-        <TextInput
-          style={styles.text}
-          placeholder="  Email"
-          onChange={text => setName(text)}
-        />
-      </View>
-      <View style={styles.TextInput}>
-        <TextInput
-          style={styles.text}
-          placeholder=" Password"
-          secureTextEntry={true}
-          onChange={text => setPassword(text)}
-        />
-        <Image
-          style={styles.iconeye}
-          source={require('../asset/img/eye2.png')}
-        />
-      </View>
-      <View style={styles.forgot}>
-        <TouchableOpacity>
-          <Text style={styles.textfg}>Forgot Password</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.forgot}>
-        <TouchableOpacity style={styles.button} onPress={handleOnSumit}>
-          <Text style={styles.textlg}>Log in</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.forgot}>
-        <TouchableOpacity onPress={reg}>
-          <Text style={styles.textSU}>SIGN UP</Text>
-        </TouchableOpacity>
+      <View style={styles.styleinput}>
+        <Text style={styles.txtemail}>Email</Text>
+        <View style={styles.TextInput}>
+          <TextInput style={styles.text} onChange={text => setName(text)} />
+        </View>
+        <Text style={[styles.txtemail, {marginTop: 45}]}>Password</Text>
+        <View style={styles.TextInput}>
+          <TextInput
+            style={styles.text}
+            secureTextEntry={true}
+            onChange={text => setPassword(text)}
+          />
+          <Image
+            style={styles.iconeye}
+            source={require('../asset/img/eye2.png')}
+          />
+        </View>
+        <View style={styles.forgot}>
+          <TouchableOpacity>
+            <Text style={styles.textfg}>Forgot Password</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.forgot}>
+          <TouchableOpacity
+            style={[styles.button, {marginRight: 17}]}
+            onPress={handleOnSumit}>
+            <Text style={[styles.textlg]}>Log in</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.forgot}>
+          <TouchableOpacity onPress={reg}>
+            <Text style={styles.textSU}>SIGN UP</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -90,15 +92,32 @@ const Login = props => {
 export default Login;
 
 const styles = StyleSheet.create({
+  txtemail: {
+    fontFamily: 'NunitoSans12pt-Regular',
+    marginLeft: 10,
+    color: '#909090',
+  },
+  styleinput: {
+    backgroundColor: '#FFFFFF',
+    width: '92%',
+    height: '56%',
+    elevation: 8,
+    paddingLeft: 17,
+    paddingTop: 17,
+    paddingBottom: 17,
+    marginTop: '5%',
+  },
   textSU: {
     color: '#303030',
-    textAlign: 'center',
+    alignSelf: 'center',
     fontSize: 18,
+    marginRight: 17,
     fontStyle: 'normal',
     fontWeight: '600',
+    fontFamily: 'NunitoSans12pt-SemiBold',
   },
   textlg: {
-    textAlign: 'center',
+    alignSelf: 'center',
     color: '#fff',
     fontSize: 18,
     fontWeight: '600',
@@ -106,20 +125,25 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 8,
-    width: '100%',
+    width: '90%',
     height: 50,
     backgroundColor: '#242424',
     flexShrink: 0,
+    alignSelf: 'center',
   },
   textfg: {
     color: '#303030',
-    textAlign: 'center',
+    alignSelf: 'center',
     fontSize: 18,
     fontWeight: '600',
     fontStyle: 'normal',
+    marginRight: 17,
+    fontFamily: 'NunitoSans12pt-SemiBold',
   },
   forgot: {
-    alignItems: 'center',
+    width: '90%',
+
+    alignSelf: 'center',
     marginTop: 35,
   },
   iconeye: {
@@ -131,24 +155,27 @@ const styles = StyleSheet.create({
   text: {
     width: '100%',
     height: 48,
-    borderWidth: 1,
-    borderColor: '#252a32',
+    borderBottomWidth: 1,
+    borderColor: '#E0E0E0',
     borderRadius: 8,
     backgroundColor: '#fff',
     paddingVertical: 11,
     paddingHorizontal: 17,
   },
   TextInput: {
-    marginTop: 25,
+    marginTop: 5,
     width: '100%',
   },
   welcomeback: {
     color: '#303030',
     fontSize: 24,
-    fontStyle: 'normal',
-    fontWeight: '700',
     lineHeight: 45,
     letterSpacing: 1.2,
+    fontWeight: '700',
+    fontFamily: 'Merriweather-Bold',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: {width: 1, height: 2},
+    textShadowRadius: 5,
   },
   hello: {
     color: '#909090',
@@ -156,6 +183,10 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '400',
     lineHeight: 45,
+    fontFamily: 'Merriweather-Regular',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: {width: 1, height: 2},
+    textShadowRadius: 5,
   },
   welcome: {
     left: 30,
@@ -165,23 +196,18 @@ const styles = StyleSheet.create({
   },
   rectangri: {
     top: 53,
-    right: 20,
+    right: 35,
   },
   rectangle: {
     top: 53,
-    left: 20,
+    left: 30,
   },
   logoac: {
-    overflow: 'hidden',
     marginTop: 22,
-    justifyContent: 'space-between',
-    resizeMode: 'cover',
-    borderWidth: 6,
-    backgroundColor: 'black',
-    width: 64,
-    height: 64,
+    resizeMode: 'contain',
+    width: 74,
+    height: 74,
     flexShrink: 0,
-    borderRadius: 50,
   },
   row: {
     justifyContent: 'space-between',
@@ -192,6 +218,7 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '100%',
-    padding: 17,
+
+    backgroundColor: '#FFF',
   },
 });
